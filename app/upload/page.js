@@ -1,5 +1,8 @@
+"use client"
+
 import React, { useState } from 'react';
-import './uploadPage.css';
+import { useRouter } from 'next/navigation';
+import './page.css';
 
 function UploadPage() {
   const [selectedFile, setSelectedFile] = useState(null);

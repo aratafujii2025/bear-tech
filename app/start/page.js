@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import './page.css';
 
@@ -20,13 +20,11 @@ function StartPage() {
       // TODO: Add error message in the UI displaying "no text has been inputted"
     } else {
       console.log(scriptInput);
-      // Use router to navigate to the desired route
       router.push('/upload');
     }
   }
 
   function handleSkipPress() {
-    // Use router to navigate to the desired route
     router.push('/upload');
   }
 

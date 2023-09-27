@@ -1,5 +1,5 @@
 .root {
-    position: relative;
+    position: absolute;
     width: 1280px;
     height: 840px;
     flex-direction: column;
@@ -8,27 +8,29 @@
     border-radius: 16px;
     background-color: #fff;
     overflow: hidden;
+    
   }
   .inputTextOpt {
     color: #1b9aaa;
     font-size: 36px;
-    line-height: 60px;
+    line-height: 20px;
     font-family: Hiragino Sans GB, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
       'Liberation Sans', sans-serif;
     letter-spacing: -0.02em;
     position: absolute;
-    left: -50px;
-    top: 101px;
-    width: 567px;
+    left: 74px;
+    top: 50px;
+    width: 449px;
     height: 142px;
     justify-content: center;
     flex-direction: column;
+    font-weight: bold;
   }
 /* Move both inputted text and placeholder text to start in the top left */
 .textBox {
     position: absolute;
     left: 63px;
-    top: 230px;
+    top: 140px;
     width: 1153px;
     height: 350px;
     border-radius: 30px;
@@ -96,7 +98,7 @@
   .description2 {
     position: absolute;
     left: 973px;
-    top: 640px;
+    top: 550px;
     width: 441px;
     height: 31px;
     text-align: center;
