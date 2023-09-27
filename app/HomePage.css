@@ -17,7 +17,7 @@
 
 .podcastSoundWaveWaveformPatter {
   display: block;
-  background-image:/* webpackIgnore: true */ url('../graphics/podcastSoundWaveWaveformPatter.png');
+  background-image:/* webpackIgnore: true */ url('graphics/podcastSoundWaveWaveformPatter.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
