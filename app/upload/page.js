@@ -36,6 +36,10 @@ function UploadPage() {
       setShowEmptyFileError(true);
       // TODO: Add error message in the UI displaying "no audio has been inputted"
     } else {
+      //TODO
+      //Show a loading mask here
+
+
       let original_text = "私の名前は斎藤佑樹です。よろしくお願いします。"
           let transcribed = "私のなな名前は斎藤ゆうきででです。よよよよろしくお願いします。"
           console.log(intended_text);
@@ -93,6 +97,9 @@ function UploadPage() {
             .catch(function(err){
               console.log(err);
             })
+
+      //TODO
+      //Make sure that the entire above code finishes running before running the router
       router.push('/done');
     }
   }
