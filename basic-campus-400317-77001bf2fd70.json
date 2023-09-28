@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "basic-campus-400317",
+  "private_key_id": "77001bf2fd70e74b2cb0e619a62a52014b63e549",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+YFf7vy3wYePI\nFEuumbE00RnCl8nGE6FhYpc5Hmd28OPlevLSVDyF31xvSyAmmg/xsACmqkoTRaCr\nHBKTOTb906bytHJsDmRxOdzUhFZGaiVJb2mbeNxxULMXFX8r0aZZSvhNoebm7xFI\nIBxni1EXw4nuNpqkTKKYhRypvy5T8AtBG/LTBWcnW3PZuLu1+unwZQqvIwBeKgV8\nudCiD70l2oDmuLK61wT80yELujapyzImoPY9y4YtsmQ6V28nHL7FOvrEESTznzKr\n1v9jPJ8Vduux1tFsPjHJhik2MxzuLKLeb1i+4UqD9NQLIP9gjWahaXNQoZvxPbyf\n1mQ+Jg8vAgMBAAECggEAFq/gjE2yKc1gmb1hb4M9TPAGQ9xW3VYFi1d2cgYfilsW\nrYhDW7FSLRn7KAAp6q+9aq3wxevRPA62IO4NgKH23bTVVmMOp7XnXl7o5CKJLYcE\nvoWabj6u9ooJbZzQNOadDlMS2B2NKMQgqRm6iNRfa5eP3mV/dEj1r3tdeRUhbjsd\n+BKTd0xiM0mKG4FMG1gKUS2YPzk+PmyGYUbP4kq74iWK5RNhZ6UB8TFW9yRWEbds\ny9WqeKavYuSZE5D1d1teJvupbMoqiXOwICfVNIYT4dF/fhIsmCUZRN4YhtyGsaK+\nJAtgFgXzunWjaMNxjROThFw/KElmbabE8WxVYRnmIQKBgQD5rYXGsqtJiaW7Z9J4\n+xUrrRzpgOpM9HSuQUJsvMSHcGqcmpXsM4Y+XUFomFB8sKtjg9RWGUDdFDrUXdnN\ncPkd2LyhkiG7M+Q9diBM63BWi3j73b5hELEicmfPhMzrEBVyOuFbOJEMCW1w+EA7\nAeYNyDrHTWIqj46KejtBcQJNRwKBgQDDMmnOL/WiHhQ1Oy3Lyee4lcFdAdsrIYFD\nHOCzxgC7OC0vquwV0aTElaDLHmiSgZCdKijJ5GOWXTAbGVOTaOK+SCX22EREEPKx\n9BetRvtGP3lWcHW0ZTKtEk327sqkhXncTosJNqkU97Korp0JUZInF7s97M8ez5WL\nKr4/iKgC2QKBgQCoa5TB4+QHRwK01+PyF+y/+ZZ3LK7gGkZbBUp5bxxjAEHqQZzA\nKEF18BIfLB+e/M2f411odsB6YRsOBgDVxE9HAty7YIfAb9CWZQiE2ox81LhXrcyu\nTUQvqFy+byaLqd3NoEpD7nRpWjKo8cziAPXediKwLlL5wry0TJ+MFV8oIQKBgHyh\nD5UqYfckpVpncpIPU/gzBcbQjJM5TUMAiSe/YHApKhCpXRuBQ2aQ8p09yR7hwufW\nJzzgqgUzcqeawBX6fetoPXUiGFQtTgf5BbUJAR6VIG/kVgLcKkL+0PC8/n2VC31y\nWKuFTueoT1YMRw/QGTUEnfSn4oaVm7HDlL0UD9HhAoGBAPCOrv/sf9JN1VCgK2uC\nhw6icm0d/jLieN+EyganJFN0V5pJWYd2ln/yivVws3jXmTnu4AcAH0u1baRDNySX\njC/i26zB+JuI3+taI2ukEY1yuQ6zsh1ccpO48UmpEuyknA5J2LtvO8z/z9MAUXca\nicDWxV0yfv7UCYuOPhYQtxwr\n-----END PRIVATE KEY-----\n",
+  "client_email": "bear-tech@basic-campus-400317.iam.gserviceaccount.com",
+  "client_id": "104330532520756326583",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bear-tech%40basic-campus-400317.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
