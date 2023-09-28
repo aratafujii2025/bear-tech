@@ -5,11 +5,13 @@ import React, { createContext, useState} from 'react';
 import './page.css';
 
 
-const TextContext = createContext();
+export const TextContext = createContext();
+export const SkipContext = createContext();
 
 function StartPage() {
   const [scriptInput, setScriptInput] = useState(""); // State to store the user's input
   const [showEmptyTextError, setShowEmptyTextError] = useState(false); // State to control error message display
+  const [skipPressed, setSkipPressed] = useState(false);
 
   const router = useRouter();
 
@@ -23,12 +25,13 @@ function StartPage() {
       setShowEmptyTextError(true);
     } else {
       console.log(scriptInput);
-      router.push('/upload');
+      router.push("/upload?text="+scriptInput);
     }
   }
 
   function handleSkipPress() {
-    router.push('/upload');
+    setSkipPressed(true);
+    router.push("/upload?skip=1");
   }
 
   return (
@@ -66,4 +69,3 @@ function StartPage() {
 }
 
 export default StartPage;
-export { TextContext };

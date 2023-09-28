@@ -1,13 +1,24 @@
 "use client"
 
 import React, { createContext, useState, useEffect, useContext} from 'react';
+import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import './page.css';
 import { TextContext } from '../start/page';
 import axios from 'axios' 
 
 function UploadPage() {
-  const router = useRouter();
+
+  //HERE!
+  //Do what I did here to pass things to the next page.
+  //check this for details https://nextjs.org/docs/app/api-reference/functions/use-search-params
+  const searchParams = useSearchParams();
+  const isSkipped = searchParams.has("skip");
+  const original_text = searchParams.get("text");
+
+  console.log(isSkipped);
+  console.log(original_text);
+
   const fileTypes = ["WAV"];
   const [showEmptyFileError, setShowEmptyFileError] = useState(false); // State to control error message display
   const intended_text = useContext(TextContext);
@@ -38,9 +49,6 @@ function UploadPage() {
     } else {
       //TODO
       //Show a loading mask here
-
-
-      let original_text = "私の名前は斎藤佑樹です。よろしくお願いします。"
           let transcribed = "私のなな名前は斎藤ゆうきででです。よよよよろしくお願いします。"
           console.log(intended_text);
           const params = new FormData();
