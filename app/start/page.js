@@ -20,6 +20,12 @@ function StartPage() {
     setShowEmptyTextError(false);
   };
 
+  //HERE!
+  //DO what I did here to pass info to the next page. 
+  //everything after the ? will get passed on into the url but not actually used for routing
+  //if you need multiple props, Do something like this..."/dashboard?a=1&a=2"
+  // check this for details https://nextjs.org/docs/app/api-reference/functions/use-search-params
+
   function handleNextPress() {
     if (scriptInput.trim() === "") {
       setShowEmptyTextError(true);
@@ -47,10 +53,7 @@ function StartPage() {
         <button className="nextButton" onClick={handleNextPress}>
           <div className="next">次へ</div>
         </button>
-        
-        {/* Conditionally render the error message */}
         {showEmptyTextError && <div className="emptytexterror">台本が入力されていません。</div>}
-
         <div className="description2">
           <div className="textBlock">台本がない場合はスキップを選択してください。</div>
           <div className="textBlock2">

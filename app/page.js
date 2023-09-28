@@ -13,7 +13,6 @@ function HomePage() {
         <div className="textBlock">吃音症患者向け、連発・伸発・難発を取り除く音声変換</div>
         <div className="textBlock">録音体験をポジティブにするフィードバック</div>
       </div>
-      {/* Use Link component to create a navigation link */}
       <Link href="/start" style={{ textDecoration: 'none' }}>
         <div className="startButton">
           <div className="startText">始める</div>
