@@ -58,30 +58,35 @@ function UploadPage() {
             console.log("empty");
           }
           params.append('file', selectDom); // DO NOT CHANGE FROM 'file'
-          axios.post("/api/speechtotext", params)
-            .then(function(response){
-              console.log(response);
-              const gsurl = response.data.data;
-              axios.get("/api/speechtotext", {params: {url: gsurl}})
-                .then(function(response){
-                  transcribed = response.data.data;
-                  console.log(transcribed);
-                  axios.get("/api/openai", {params:{original: original_text, transcribed: transcribed}})
-                    .then(function(response){
-                      console.log(response);
-                      const chat_gpt_response = response.data.data.message.content;
-                    })
-                    .catch(function(err){
-                      console.log(err);
-                    });
-                })
-                .catch(function(err){
-                  console.log(err);
-                })
-            })
-            .catch(function(err){
-              console.log(err);
-            })
+
+          if(isSkipped==true){
+            axios.post("/api/speechtotext", params)
+              .then(function(response){
+                console.log(response);
+                const gsurl = response.data.data;
+                axios.get("/api/speechtotext", {params: {url: gsurl}})
+                  .then(function(response){
+                    transcribed = response.data.data;
+                    console.log(transcribed);
+                    axios.get("/api/openai", {params:{original: original_text, transcribed: transcribed}})
+                      .then(function(response){
+                        console.log(response);
+                        const chat_gpt_response = response.data.data.message.content;
+                      })
+                      .catch(function(err){
+                        console.log(err);
+                      });
+                  })
+                  .catch(function(err){
+                    console.log(err);
+                  })
+              })
+              .catch(function(err){
+                console.log(err);
+              })
+          }else{
+            const chat_gpt_response = "台本が入力されず、本来の文章がわからないので、AIアドバイスを表示できません。AIアドバイスをご希望の場合は、トップへ戻り、台本を入力して再度変換してください。"
+          }
 
           axios.post("/api/cleanvoice", params)
             .then(function(response){
