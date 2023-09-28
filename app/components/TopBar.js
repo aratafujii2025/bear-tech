@@ -17,7 +17,7 @@ function TopBar() {
        <Link href="/" className="home" style={{ textDecoration: 'none' }}>
          ホーム
        </Link>
-       <Link href="/contact" className="contact" style={{ textDecoration: 'none' }}>
+       <Link href="/contact" className="contact" style={{ textDecoration: 'none' }} alt="icon of bear">
          お問い合わせ
        </Link>
      </div>

@@ -6,7 +6,7 @@ import './HomePage.css';
 function HomePage() {
   return <>
     <div className="homeAll">
-      <div className="podcastSoundWaveWaveformPatter"></div>
+      <div className="podcastSoundWaveWaveformPatter" alt="multiple diagonal lines going across the screen"></div>
       <div className="todoketai">届けたい声を</div>
       <div className="aI">AI でクリアに</div>
       <div className="indentto">

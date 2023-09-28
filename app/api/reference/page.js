@@ -31,9 +31,12 @@ export default function Home() {
             />
           </a>
         </div>
+
+{/* STARTS HERE */}
+
         <input type="text" id="text" name="text"/>
         <input type="file" id="file" name="file"/>
-        <input type="submit" onClick={() =>{
+        <input type="submit" onClick={() =>{ //submit button
           let original_text = "私の名前は斎藤佑樹です。よろしくお願いします。"
           let transcribed = "私のなな名前は斎藤ゆうきででです。よよよよろしくお願いします。"
 

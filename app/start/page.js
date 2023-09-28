@@ -70,4 +70,5 @@ function StartPage() {
 export default StartPage;
 
 // Export the TextContext for other components to use
+
 export { TextContext };
