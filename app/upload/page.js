@@ -41,10 +41,11 @@ function UploadPage() {
           console.log(intended_text);
           const params = new FormData();
           const selectDom = document.getElementById("uploadButton").files[0];
+          console.log(selectDom);
           if(selectDom == null){
             console.log("empty");
           }
-          params.append('uploadButton', selectDom);
+          params.append('file', selectDom); // DO NOT CHANGE FROM 'file'
           axios.post("/api/speechtotext", params)
             .then(function(response){
               console.log(response);
