@@ -1,10 +1,10 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState} from 'react';
 import './page.css';
 
-// Create a context for the scriptInput state
+
 const TextContext = createContext();
 
 function StartPage() {
@@ -15,13 +15,11 @@ function StartPage() {
 
   const handleInputChange = (event) => {
     setScriptInput(event.target.value);
-    // Hide the error message when the user starts typing again
     setShowEmptyTextError(false);
   };
 
   function handleNextPress() {
     if (scriptInput.trim() === "") {
-      // If scriptInput is empty, show the error message
       setShowEmptyTextError(true);
     } else {
       console.log(scriptInput);
@@ -68,7 +66,4 @@ function StartPage() {
 }
 
 export default StartPage;
-
-// Export the TextContext for other components to use
-
 export { TextContext };

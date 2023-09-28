@@ -10,7 +10,7 @@ function UploadPage() {
   const router = useRouter();
   const fileTypes = ["WAV"];
   const [showEmptyFileError, setShowEmptyFileError] = useState(false); // State to control error message display
-  const scriptInput = useContext(TextContext); 
+  const intended_text = useContext(TextContext);
 
   useEffect(() => {
     const uploadButton = document.getElementById('uploadButton');
@@ -37,14 +37,13 @@ function UploadPage() {
       // TODO: Add error message in the UI displaying "no audio has been inputted"
     } else {
       let original_text = "私の名前は斎藤佑樹です。よろしくお願いします。"
-      let transcribed = "私のなな名前は斎藤ゆうきででです。よよよよろしくお願いします。"
-          console.log(scriptInput);
+          let transcribed = "私のなな名前は斎藤ゆうきででです。よよよよろしくお願いします。"
+          console.log(intended_text);
           const params = new FormData();
           const selectDom = document.getElementById("uploadButton").files[0];
           if(selectDom == null){
             console.log("empty");
           }
-
           params.append('uploadButton', selectDom);
           axios.post("/api/speechtotext", params)
             .then(function(response){
@@ -56,10 +55,8 @@ function UploadPage() {
                   console.log(transcribed);
                   axios.get("/api/openai", {params:{original: original_text, transcribed: transcribed}})
                     .then(function(response){
-                      console.log("3");
                       console.log(response);
-                      const GPTContext = createContext(response.data.data.message.content);
-                      
+                      const chat_gpt_response = response.data.data.message.content;
                     })
                     .catch(function(err){
                       console.log(err);
@@ -83,7 +80,7 @@ function UploadPage() {
                     if(res.data.data.status == "SUCCESS"){
                       clearInterval(id);
                       console.log(res.data.data.url);
-                      const URLContext = createContext(res.data.data.url);
+                      const download_url = res.data.data.url;
                     }
                   })
                   .catch(function(err){
@@ -122,5 +119,5 @@ function UploadPage() {
 
 export default UploadPage;
 
-export { URLContext, GPTContext };
+// export { URLContext, GPTContext };
 
