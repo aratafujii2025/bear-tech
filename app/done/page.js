@@ -2,11 +2,17 @@
 
 import React, {useContext} from 'react';
 import { useRouter} from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import './page.css';
 import {TextContext} from '../start/page';
 import {URLContext, GPTContext} from '../upload/page';
 
 function DonePage() {
+  const searchParams = useSearchParams();
+  const advice_text = searchParams.get("chatgpt");
+  const download = searchParams.get("download");
+
+  console.log(advice_text);
 
   const router = useRouter();
   const scriptInput = useContext(TextContext); 
@@ -40,14 +46,14 @@ function DonePage() {
       </div>
     <div className="advicebox">
       <div className="heading">AI からのメッセージ：</div>
-      {/* <div className="advice">{gptMessage}</div>  */}
+      <div className="advice">{advice_text}</div> 
     </div>
     <button className="backtotop" onClick={backToTop}>
         <div className="backtotoptext">トップへ戻る</div>
       </button>
-      <button className="downloadButton">
-        <div className="downloadtext" onClick={handleDownload}>音声をダウンロード</div>
-      </button>
+      <div className="downloadButton" >
+        <a className="downloadtext" href={download}>音声をダウンロード</a>
+      </div>
       </> 
   );
 }

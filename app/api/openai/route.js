@@ -1,7 +1,7 @@
 import OpenAIApi from "openai";
 import { NextResponse } from "next/server";
 
-const apiKey = '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'
+const apiKey = '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'
 
 
 const openai = new OpenAIApi({

@@ -62,8 +62,9 @@ function UploadPage() {
           axios.post("/api/cleanvoice", params)
           .then(function(response){
             const url = response.data.data;
-            console.log(url);
-            if(isSkipped==true){
+            console.log(isSkipped);
+            if(isSkipped==false){
+              console.log("aaaaa");
               axios.post("/api/speechtotext", params)
                 .then(function(response){
                   console.log(response);
@@ -95,6 +96,7 @@ function UploadPage() {
             const id = setInterval(function(){
               axios.get("/api/cleanvoice", {params: {url: url}})
                 .then(function(res){
+                  console.log(res.data.data.status);
                   if(res.data.data.status == "SUCCESS"){
                     clearInterval(id);
                     console.log(res.data.data.url);

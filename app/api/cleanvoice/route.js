@@ -11,7 +11,7 @@ export const config = {
 
 export async function POST(req, res){
     console.log("0");
-    const apiKey = 'a3h5Tk5tVRp8VWmKo9ajVAy2bj7JkYMs'; 
+    const apiKey = '7arRxEUsePXWVZk6EMr5fUVS7BpsdpdP'; 
     const data = await req.formData();
     console.log("1");
 
