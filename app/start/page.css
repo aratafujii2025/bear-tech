@@ -70,7 +70,7 @@
   .nextButton {
     position: absolute;
     left: 1019px;
-    top: 682px;
+    top: 600px;
     width: 197px;
     height: 82px;
     justify-content: center;
@@ -97,7 +97,7 @@
     
   .description2 {
     position: absolute;
-    left: 973px;
+    left: 1073px;
     top: 550px;
     width: 441px;
     height: 31px;
@@ -131,7 +131,7 @@
   .skipButton {
     position: absolute;
     left: 787px;
-    top: 682px;
+    top: 600px;
     width: 197px;
     height: 82px;
     justify-content: center;
