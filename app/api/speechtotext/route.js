@@ -1,14 +1,9 @@
-import axios from "axios";
-import * as fs from "fs";
 import { NextResponse } from "next/server";
 import { NextRequest } from 'next/server'
 
-// Imports the Google Cloud client library.
 
-// Instantiates a client. If you don't specify credentials when constructing
-// the client, the client library will look for credentials in the
-// environment.
-// Makes an authenticated API request.
+//To use GOOGLE API, make sure that your .env file has the credential json.
+
 async function listBuckets() {
   try {
     const {Storage} = require('@google-cloud/storage');
@@ -63,7 +58,7 @@ export async function GET(req, res){
     };
     const config = {
       encoding: 'LINEAR16',
-      languageCode: 'ja-JP', //	ja-JP
+      languageCode: 'ja-JP',
     };
     const request = {
       audio: audio,
@@ -76,6 +71,5 @@ export async function GET(req, res){
       .map(result => result.alternatives[0].transcript)
       .join('\n');
     console.log(`Transcription: ${transcription}`);
-    console.log("1");
     return NextResponse.json({data: transcription});
 }

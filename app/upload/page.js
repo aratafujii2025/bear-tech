@@ -111,10 +111,6 @@ function UploadPage() {
                 
                     const id = setInterval(checkChatGptResponse, 5000); // Check every 5 seconds
                 
-                    
-                    // if (chat_gpt_response != undefined){
-                    //   router.push('/done?chatgpt=' + chat_gpt_response + '&download=' + download_url);
-                    // }
                   }
                 })
                 .catch(function(err){
@@ -126,9 +122,6 @@ function UploadPage() {
           .catch(function(err){
             console.log(err);
           })
-
-      //TODO
-      //Make sure that the entire above code finishes running before running the router
     }
   }
   
@@ -155,6 +148,4 @@ function UploadPage() {
 };
 
 export default UploadPage;
-
-// export { URLContext, GPTContext };
 

@@ -11,7 +11,7 @@ export const config = {
 
 export async function POST(req, res){
     console.log("0");
-    const apiKey = '7arRxEUsePXWVZk6EMr5fUVS7BpsdpdP'; 
+    const apiKey = '<YOUR cleanvoice API KEY>'; 
     const data = await req.formData();
     console.log("1");
 
@@ -60,7 +60,7 @@ export async function POST(req, res){
 }
 
 export async function GET(req, res){
-    const apiKey = '7arRxEUsePXWVZk6EMr5fUVS7BpsdpdP';
+    const apiKey = '<YOUR cleanvoice API KEY>';
     const headers = {'X-API-Key': apiKey};
 
     const searchParams = req.nextUrl.searchParams
