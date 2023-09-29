@@ -10,7 +10,14 @@ import {URLContext, GPTContext} from '../upload/page';
 function DonePage() {
   const searchParams = useSearchParams();
   const advice_text = searchParams.get("chatgpt");
-  const download = searchParams.get("download");
+  var download = searchParams.get("download");
+  for (const key of searchParams.keys()) {
+    if(key == "download" || key == "chatgpt"){
+      continue;
+    }
+    download= download + "&" + key + "=" + searchParams.get(key);
+  }
+  console.log(download);
 
   console.log(advice_text);
 
@@ -52,7 +59,7 @@ function DonePage() {
         <div className="backtotoptext">トップへ戻る</div>
       </button>
       <div className="downloadButton" >
-        <a className="downloadtext" href={download}>音声をダウンロード</a>
+        <a className="downloadtext" href={download} download>音声をダウンロード</a>
       </div>
       </> 
   );

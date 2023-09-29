@@ -46,6 +46,7 @@ function UploadPage() {
 
   function handleNextPress() {
     const fileChosen = document.getElementById('file-chosen');
+    let chat_gpt_response; // Declare chat_gpt_response outside of the nested functions
     if (fileChosen.textContent === "No file chosen") {
       setShowEmptyFileError(true);
     } else {
@@ -76,7 +77,7 @@ function UploadPage() {
                       axios.get("/api/openai", {params:{original: original_text, transcribed: transcribed}})
                         .then(function(response){
                           console.log(response);
-                          const chat_gpt_response = response.data.data.message.content;
+                          chat_gpt_response = response.data.data.message.content;
                         })
                         .catch(function(err){
                           console.log(err);
@@ -90,7 +91,7 @@ function UploadPage() {
                   console.log(err);
                 })
             }else{
-              const chat_gpt_response = "台本が入力されず、本来の文章がわからないので、AIアドバイスを表示できません。AIアドバイスをご希望の場合は、トップへ戻り、台本を入力して再度変換してください。"
+              chat_gpt_response = "台本が入力されず、本来の文章がわからないので、AIアドバイスを表示できません。AIアドバイスをご希望の場合は、トップへ戻り、台本を入力して再度変換してください。"
             }
 
             const id = setInterval(function(){
@@ -98,10 +99,22 @@ function UploadPage() {
                 .then(function(res){
                   console.log(res.data.data.status);
                   if(res.data.data.status == "SUCCESS"){
-                    clearInterval(id);
                     console.log(res.data.data.url);
-                    const download_url = res.data.data.url;
-                    router.push('/done?chatgpt=' + chat_gpt_response + '&download=' + download_url);
+
+                    function checkChatGptResponse() {
+                      if (chat_gpt_response !== undefined) {
+                        clearInterval(id); // Clear the interval once chat_gpt_response is defined
+                        const download_url = res.data.data.url;
+                        router.push('/done?chatgpt=' + chat_gpt_response + '&download=' + download_url);
+                      }
+                    }
+                
+                    const id = setInterval(checkChatGptResponse, 5000); // Check every 5 seconds
+                
+                    
+                    // if (chat_gpt_response != undefined){
+                    //   router.push('/done?chatgpt=' + chat_gpt_response + '&download=' + download_url);
+                    // }
                   }
                 })
                 .catch(function(err){

@@ -60,7 +60,7 @@ export async function POST(req, res){
 }
 
 export async function GET(req, res){
-    const apiKey = 'bkBKpGbsNwQR57tLsLpv2ZApdZN7kd6S';
+    const apiKey = '7arRxEUsePXWVZk6EMr5fUVS7BpsdpdP';
     const headers = {'X-API-Key': apiKey};
 
     const searchParams = req.nextUrl.searchParams
