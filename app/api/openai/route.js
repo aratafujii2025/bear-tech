@@ -1,11 +1,11 @@
 import OpenAIApi from "openai";
 import { NextResponse } from "next/server";
 
-const apiKey = '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'
+const apiKey = '<your API key>'
 
 
 const openai = new OpenAIApi({
-    organization: "org-dxn3iBH7UUGk8A5Q4P8fnw3G",
+    organization: "<your org id>",
     apiKey: apiKey,
 });
 
